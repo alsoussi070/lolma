@@ -20,8 +20,6 @@ int main()
     string GetAnswer(string ques);
     void intro(); // this one is just outputs text
 
-////YOU STOPPED HERE
-
     //ready answers
     //i put them at the end of the array so new entries wont replace them
     question2[94] = "hello";
@@ -43,28 +41,28 @@ int main()
     answer2[99] = "IT'S_ALIVE_!!!";
 
     //main code
-    intro();
+    //intro();
     for (int f = 0; f < 1000; f++)
     {
         cout << "ask me a question : " << flush;
         cin >> question;
         GetAnswer(question); 
-        if (answer == "donno") // GetAnswer() will pass "donno" if the question isnt already in the array
+        if (answer == "donno") // GetAnswer() will pass "donno" if the question isn't already in the array
         {
-            cout << "i can't figure out the answer for this question" << endl;
-            cout << "do you have an answer for this question (reply with yes or no) : "<< flush;
+            cout << "i have no answer for this question" << endl;
+            cout << "would you like to input an answer (yes or no) : "<< flush;
             cin >> YorN;
             if (YorN == "yes" || YorN =="Yes" || YorN == "y" || YorN == "Y")
             {
                 cout << "suggest an answer : " << flush;
                 cin >> answer2[counter];
-                cout << endl << "i will put that in mind... thanks" << endl;
+                cout << endl << "thanks" << endl;
                 question2[counter] = question;
                 counter++;
             }
             else
             {
-                cout << "what ever you see... thanks anyway" << endl;
+                cout << "what ever" << endl;
             }
         }
         else // if the answer != donno then the answer will be in the array
